@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - SwiftCart</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-base-200">
+    <div id="header"></div>
+
+    <!-- Cart Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold mb-8">Shopping Cart</h1>
+            
+            <div id="cart-content" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Cart Items -->
+                <div class="lg:col-span-2">
+                    <div id="cart-items" class="space-y-4">
+                        <div class="skeleton h-32 w-full"></div>
+                        <div class="skeleton h-32 w-full"></div>
+                    </div>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="lg:col-span-1">
+                    <div class="card bg-base-100 shadow-xl p-6 sticky top-24">
+                        <h2 class="text-2xl font-bold mb-4">Order Summary</h2>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between">
+                                <span>Subtotal</span>
+                                <span id="cart-subtotal">$0.00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Shipping</span>
+                                <span class="text-success">Free</span>
+                            </div>
+                            <div class="border-t pt-2 flex justify-between font-bold text-lg">
+                                <span>Total</span>
+                                <span id="cart-total" class="text-primary">$0.00</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block btn-lg" onclick="alert('Checkout coming soon!')">
+                            Proceed to Checkout
+                        </button>
+                        <button class="btn btn-ghost btn-block mt-2" onclick="window.location.href='products.html'">
+                            Continue Shopping
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="empty-cart" class="hidden text-center py-16">
+                <i class="fas fa-shopping-cart text-6xl text-gray-300 mb-4"></i>
+                <h2 class="text-2xl font-bold mb-4">Your cart is empty</h2>
+                <p class="text-gray-600 mb-6">Looks like you haven't added anything yet</p>
+                <a href="products.html" class="btn btn-primary">Start Shopping</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script src="js/store.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/components/Header.js"></script>
+    <script src="js/components/Footer.js"></script>
+    <script src="js/components/ProductCart.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
